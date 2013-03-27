@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#"
+     xml:base="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#achete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#achete">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#vend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#contracte -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#contracte">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#declenche -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#declenche">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#diagnostique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#diagnostique">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#estVenduPar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#estVenduPar">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#vend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#fabrique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#fabrique">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#prescrit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#prescrit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#recent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#recent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#revele -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#revele"/>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#soigne -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#soigne"/>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#vend -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#vend">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pharmacie"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#ArticlePrix -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#ArticlePrix">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedicamentNom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PharmacieNom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#ArticleReference -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#ArticleReference">
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#CodeATC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#CodeATC">
+        <rdfs:comment>http://fr.wikipedia.org/wiki/Classification_anatomique,_th%C3%A9rapeutique_et_chimique</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#CodeCAS -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#CodeCAS">
+        <rdfs:comment>http://fr.wikipedia.org/wiki/Num%C3%A9ro_CAS</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#LaboNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#LaboNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MaladieNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MaladieNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedecinNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedecinNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedicamentNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedicamentNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PharmacieNom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedicamentPrix -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#MedicamentPrix">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PersonneNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PersonneNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PharmacieNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#PharmacieNom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pharmacie"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#SymptomeDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#fabrique"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#declenche"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#diagnostique"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#prescrit"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#soigne"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#contracte"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#recent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#achete"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pharmacie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pharmacie">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#vend"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Article"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#revele"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Aspegic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Aspegic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medicament"/>
+        <MedicamentNom rdf:datatype="&xsd;string">Aspegic</MedicamentNom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#DrJean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#DrJean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Medecin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Dudule -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Dudule">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Personne"/>
+        <PersonneNom rdf:datatype="&xsd;string">Paul Dudule</PersonneNom>
+        <recent rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Fievre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Fievre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Fievre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Symptome"/>
+        <SymptomeDescription rdf:datatype="&xsd;string">Fièvre</SymptomeDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Gastro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Gastro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+        <MaladieNom rdf:datatype="&xsd;string">La Gastro</MaladieNom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Grippe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Grippe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Maladie"/>
+        <MaladieNom rdf:datatype="&xsd;string">La Grippe</MaladieNom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pfizer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pfizer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo"/>
+        <LaboNom rdf:datatype="&xsd;string">Pfizer</LaboNom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Phama_PARIS10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Phama_PARIS10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Pharmacie"/>
+        <PharmacieNom>Pharmacie Paris 10</PharmacieNom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Sanofi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Sanofi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/u016272/ontologies/2013/2/untitled-ontology-17#Labo"/>
+        <LaboNom rdf:datatype="&xsd;string">Sanofi</LaboNom>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
