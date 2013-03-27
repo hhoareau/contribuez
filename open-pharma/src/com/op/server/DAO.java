@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 SFR API - Hervé Hoareau
+ * Copyright (C) 2012 SFR API - Hervï¿½ Hoareau
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,21 +20,24 @@ package com.op.server;
 
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.logging.Logger;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.util.DAOBase;
 
 
 /**
- * Cette classe regroupe l'ensemble des méthodes utilisées
- * par les servlet du serveur pour manipuler la base de données de google
+ * Cette classe regroupe l'ensemble des mï¿½thodes utilisï¿½es
+ * par les servlet du serveur pour manipuler la base de donnï¿½es de google
  * @see http://code.google.com/p/objectify-appengine/wiki/BestPractices#Utilisez_un_DAO
  *  
- * @author Hervé Hoareau
+ * @author Hervï¿½ Hoareau
  */
 public class DAO extends DAOBase {	
 	private static final Logger log = Logger.getLogger(DAO.class.getName());
@@ -58,8 +61,12 @@ public class DAO extends DAOBase {
 				//log.warning("analyse de "+title);
 				String nom=title.split(":")[1].split("\\(DB")[0];
 				Drug d=new Drug(nom);
-				int ind=doc.getElementById("drug-actions").getElementsByClass("standard").size();
-				log.warning("index="+ind);
+				Element table=doc.select("table[class=standard]").first();
+				Iterator<Element> ite=table.select("td").iterator();
+				String rc="";
+				for(int j=0;j<4;j++){
+					rc=rc+ite.next().text();
+				}
 				//d.CASnumber=doc.getElementsByIndexEquals(ind).val();
 				ofy().put(d);
 			}
