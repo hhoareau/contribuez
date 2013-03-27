@@ -19,6 +19,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 package com.op.server;
 
 import java.util.logging.Logger;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 
 //Cette classe permet de partager des méthodes entre plusieurs classes filles
@@ -27,7 +29,13 @@ public class BaseServlet extends HttpServlet  {
 	protected static final String Domain_Appli="http://open-pharma.appspot.com";
 	
 	protected static final Logger  log = Logger.getLogger(BaseServlet.class.getName());	
-	protected static DAO dao=new DAO();
+	
+	protected static DAO dao=null;
+	
+	public BaseServlet(){
+		ServletContext context = getServletContext();
+		dao=new DAO(context.getResourceAsStream("/WEB-INF/openpharma.xml"));
+	}
 	
 	
 }

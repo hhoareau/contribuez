@@ -18,17 +18,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 package com.op.server;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.hp.hpl.jena.ontology.Individual;
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
 
 //Servlet permettant de vérifier un lot de numéros de téléphone
 //compatible avec le dépot de message
@@ -37,19 +29,14 @@ public class init extends BaseServlet {
 	String rc="";
 	
 	public void doGet(HttpServletRequest req, final HttpServletResponse resp) throws IOException {				
-
-		//voir http://jena.apache.org/documentation/ontology/	
-		OntModel model = ModelFactory.createOntologyModel();
+				
+		//Drugs
+		for(int k=1;k<950;k++)
+			dao.captureDrugs("http://www.drugbank.ca/drugs/DB"+String.format("%05d", k));
 		
-		ServletContext context = getServletContext();
-		model.read(context.getResourceAsStream("/WEB-INF/openpharma.xml"),"RDF/XML");		
-		
-		OntModel inf = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_MICRO_RULE_INF, model );
-		OntClass medicament=model.getOntClass("Medicament");
-		Individual i=model.createIndividual("Med1",medicament);
-		
-		for(int k=945;k<950;k++)
-			dao.capture("http://www.drugbank.ca/drugs/DB"+String.format("%05d", k));
+		//Pharmacie
+		for(int k=1;k<95;k++)
+			dao.capturePharmacie("http://www.keskeces.com/pharmacie/liste-"+k+".html");		
 			
 		resp.getWriter().write("ok");
 		resp.setContentType("text/plain");

@@ -40,6 +40,7 @@ public class Drug {
 	@Id public Long Id; 					//Id interne des messages	
 	@Indexed public String name=null;
 	@Indexed public String CASnumber=null;
+	public String indication;
 	
 	public Drug(String name){this.name=name;}
 	public Drug(){}
