@@ -29,14 +29,7 @@ public class BaseServlet extends HttpServlet  {
 	protected static final String Domain_Appli="http://open-pharma.appspot.com";
 	
 	protected static final Logger  log = Logger.getLogger(BaseServlet.class.getName());	
-	
-	protected static DAO dao=null;
-	
-	public BaseServlet(){
-		ServletContext context = getServletContext();
-		dao=new DAO(context.getResourceAsStream("/WEB-INF/openpharma.xml"));
-	}
-	
-	
+	protected static DAO dao=new DAO();;
+		
 }
 

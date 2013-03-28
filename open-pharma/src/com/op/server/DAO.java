@@ -57,18 +57,22 @@ public class DAO extends DAOBase {
 	static 	{
 			ObjectifyService.register(Drug.class);
 			ObjectifyService.register(Pharmacie.class);
+			ObjectifyService.register(Labo.class);
+			ObjectifyService.register(Symptom.class);
 			}
 
 	
-	public DAO(InputStream is){
+	public void OpenOntology(InputStream is){
 		model.read(is,"RDF/XML");		
 		inf= ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_MICRO_RULE_INF, model);
 	}
 	
 	public Document HTMLParser(String url){
 		Document doc =null;
-		try {doc=Jsoup.connect(url).get();} 
-		catch (IOException e) {log.severe(e.getMessage());}
+		try {
+			doc=Jsoup.connect(url).get();
+		} catch (IOException e) {log.severe(e.getMessage());}
+		
 		return doc;
 	}
 	
@@ -108,6 +112,20 @@ public class DAO extends DAOBase {
 		}
 	}
 	
+	//Capture de la page http://en.wikipedia.org/wiki/List_of_medical_symptoms
+	public void captureLabo(String url){
+		Document doc=HTMLParser(url);
+		if(doc!=null){
+			Iterator<Element> ite=doc.select("href").iterator();
+			while(ite.hasNext()){
+				Labo labo=new Labo();
+				labo.name=ite.next().text();
+				ofy().put(labo);
+			}
+		}
+	}
+	
+	
 	
 	public void capturePharmacie(String url) {
 		Document doc=HTMLParser(url);
@@ -137,7 +155,6 @@ public class DAO extends DAOBase {
 			Individual i=model.createIndividual(ite.next().name,ontclass);
 			i.addLiteral(p, ite.next().name);
 		}
-		
 	}
 	
 	
